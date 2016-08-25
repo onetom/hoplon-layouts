@@ -1,0 +1,10 @@
+.idea/tasks.xml
+.idea/workspace.xml
+.idea/replstate.xml
+target
+.nrepl-port
+.nrepl-history
+.repl-history
+.lein-env
+project.clj
+.vertx/
