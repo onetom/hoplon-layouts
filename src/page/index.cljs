@@ -1,19 +1,16 @@
 (ns ^{:hoplon/page "index.html"} page.index
   (:require
-    [hoplon.core :as h
-     :refer-macros [defelem text with-init! with-page-load
-                    with-timeout with-interval
-                    when-tpl if-tpl case-tpl cond-tpl for-tpl loop-tpl]]
-    [javelin.core
-     :refer [cell? input? cell formula lens cell-map
-             set-cell! alts! destroy-cell!]
-     :refer-macros [cell= defc defc= set-cell!= dosync cell-doseq
-                    with-let cell-let]]
+    [javelin.core :as j :refer [cell] :refer-macros [cell= defc defc=]]
+    [hoplon.core :as h :refer [defelem when-tpl if-tpl case-tpl for-tpl]]
     [devtools.core]))
 
-(devtools.core/install! [:custom-formatters :hints :async])
+(defonce
+  _first_load_
+  (do
+    (devtools.core/install! [:custom-formatters :hints :async])))
 
-(defn reload [] (js/console.log "Reload callback was called"))
+(defn reload []
+  (js/console.log "Reload callback was called"))
 
 (h/html
   (h/body
