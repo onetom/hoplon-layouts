@@ -2,16 +2,12 @@
   (:require
     [javelin.core :as j :refer [cell] :refer-macros [cell= defc defc=]]
     [hoplon.core :as h :refer [defelem when-tpl if-tpl case-tpl for-tpl]]
-    [devtools.core]
-    ;[material-hl.core :as mdl]
-    ;[material-hl.buttons :refer [button]]
-    [clojure.string :as str]
     [page.layout.sub-menu]))
 
 (defonce
   _first_load_
   (do
-    (devtools.core/install! [:custom-formatters :hints :async])))
+    (js/console.debug "First time page load")))
 
 (defn reload []
   (js/console.log "Reload callback was called ")

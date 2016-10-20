@@ -95,7 +95,7 @@
          :click #(do
                   (js/console.debug "ANCHOR" %)
                   true)
-         (h/img :src "//localhost:8100/logo.png"
+         (h/img :src "/acmelogos.com-logo-8.svg"
                 :alt "add+"
                 :css {:height (px (- top-nav-height (* 2 pad)))}))))
 
@@ -197,10 +197,14 @@
 
 (defn html []
   (h/html
+    :lang "en"
     :css {:height "100%"
           ;:overflow "hidden"
           }
     (h/head
+      (h/title "Submenu layout")
+      (h/html-meta :name "viewport"
+                   :content "width=device-width, initial-scale=1")
       (h/style css-reset))
     (h/body
       :css {:width    "100%"
